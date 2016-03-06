@@ -5,11 +5,7 @@ var emitter = new events.EventEmitter();
 console.log('Am I here?');
 
 emitter.on('createBitmapObj',exports.createBitmapObj = function(bitmap){
-
-  console.log('here here');
-  // console.dir(bitmap);
   bitmap.headField = bitmap.toString('ascii', 0,2);
-  // console.log('I am the: ' + bitmap);
   bitmap.size = bitmap.readUInt32LE(2);
   bitmap.startPixelArray = bitmap.readUInt32LE(10);
   bitmap.colorPalette = bitmap.readUInt32LE(46);

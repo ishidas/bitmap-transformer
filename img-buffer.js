@@ -6,7 +6,6 @@ var events = require('events');
 var emitter = new events.EventEmitter();
 
 
-
 //reading and writing files using fs readFile & writeFile method
 fs.readFile( __dirname + '/img/palette-bitmap.bmp',function(err, data){
   var bitmap = {};
