@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs');
 var bitmapObjFile = require( __dirname + '/bitmap-obj.js');
+var changeColor = require( __dirname + '/change-color.js');
 var events = require('events');
 var emitter = new events.EventEmitter();
 
@@ -12,10 +13,10 @@ fs.readFile( __dirname + '/img/palette-bitmap.bmp',function(err, data){
 
   emitter.on('saveBuffer', function(data){
     bitmap = data;
-    fs.writeFile( __dirname + '/img/color.bmp',bitmap);
     bitmapObjFile.createBitmapObj(bitmap);
   });
 
+  fs.writeFile( __dirname + '/img/color.bmp',data);
   emitter.emit('saveBuffer', data);
-  
+  changeColor.transform(bitmap);
 });

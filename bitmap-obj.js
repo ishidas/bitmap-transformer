@@ -19,5 +19,3 @@ emitter.on('createBitmapObj',exports.createBitmapObj = function(bitmap){
   console.dir('color palette :' + bitmap.colorPalette);
 
 });
-
-// emitter.emit('createBitmapObj', bitmap);
