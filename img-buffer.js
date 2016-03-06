@@ -14,9 +14,11 @@ fs.readFile( __dirname + '/img/palette-bitmap.bmp',function(err, data){
   emitter.on('saveBuffer', function(data){
     bitmap = data;
     bitmapObjFile.createBitmapObj(bitmap);
+    changeColor.transform(bitmap);
+    // console.dir(bitmap);
   });
-
   fs.writeFile( __dirname + '/img/color.bmp',data);
   emitter.emit('saveBuffer', data);
-  changeColor.transform(bitmap);
+
+
 });
