@@ -4,11 +4,12 @@ var emitter = new events.EventEmitter();
 
 // Black and White colors
 emitter.on('blackAndWhite', exports.blackAndWhite = function(bitmap){
-  var nums = [];
+  var numsR = [];
+
 
   for(var i = 54; i < 1078; i++){
     var constantNum = 0.2;
-    console.log(Math.floor(bitmap[i] * constantNum));
+    console.log(Math.floor(bitmap[i] * constantNum);
     nums.push(Math.floor(bitmap[i] * constantNum));
   }
   var counter = 54;
