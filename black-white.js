@@ -2,23 +2,25 @@
 var events = require('events');
 var emitter = new events.EventEmitter();
 
-// Black and White colors
+// Black and White/gray scale colors
 emitter.on('blackAndWhite', exports.blackAndWhite = function(bitmap){
-  var numsR = [];
 
+  for(var i = 54; i <= 1078; i = i + 4){
+    // console.dir(bitmap);
+    var grayScale = ( bitmap[i]+ bitmap[i+1] + bitmap[i+2])/3;
+    // var constantNum = 0.2;
+    bitmap[i] = grayScale;
+    bitmap[i+1] = grayScale;
+    bitmap[i+2] = grayScale;
+    console.log(bitmap[i], bitmap[i+1], bitmap[i+2]);
 
-  for(var i = 54; i < 1078; i++){
-    var constantNum = 0.2;
-    console.log(Math.floor(bitmap[i] * constantNum);
-    nums.push(Math.floor(bitmap[i] * constantNum));
   }
-  var counter = 54;
-  nums.forEach(function(num){
-    // console.log('here is ' + counter );
-    // var newNum = Math.floor(num * constantNum);
-    // console.log('sum of this is : ' + test);
-    bitmap.writeUInt32LE(num, counter, counter);
-    counter += 1;
-    return counter;
-  });
+  console.dir(bitmap);
+  return bitmap;
 });
+
+// function createNewArray (){
+//   for( var i = 54; i < 1078; i++){
+//
+//   }
+// }
