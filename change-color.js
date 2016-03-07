@@ -6,12 +6,12 @@ var emitter = new events.EventEmitter();
 emitter.on('transform', exports.transform = function(bitmap){
   var nums = [];
 
-  for(var i = 1078; i < bitmap.length; i++){
-    var max = 32;
+  for(var i = 54; i < 1078; i++){
+    var max = 256;
     console.log(max - bitmap[i]);
     nums.push(max - bitmap[i]);
   }
-  var counter = 1078;
+  var counter = 54;
   nums.forEach(function(num){
     console.log('here is ' + counter );
     bitmap.writeUInt32LE(num, counter, counter);
