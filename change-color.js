@@ -2,8 +2,7 @@
 var events = require('events');
 var emitter = new events.EventEmitter();
 
-
-// console.log('Changing color');
+// Inverting colors
 emitter.on('transform', exports.transform = function(bitmap){
   var nums = [];
 
@@ -19,5 +18,4 @@ emitter.on('transform', exports.transform = function(bitmap){
     counter += 1;
     return counter;
   });
-  // console.dir(bitmap);
 });
