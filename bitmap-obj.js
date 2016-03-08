@@ -11,9 +11,9 @@ emitter.on('createBitmapObj',exports.createBitmapObj = function(bitmap){
   bitmap.size = bitmap.readUInt32LE(2);
   bitmap.startPixelArray = bitmap.readUInt32LE(10);
   bitmap.colorPalette = bitmap.readUInt32LE(46);
-  console.dir('headField :' + bitmap.headField);
-  console.dir('size :' + bitmap.size);
-  console.dir('Pix Array start :' + bitmap.startPixelArray);
-  console.dir('color palette :' + bitmap.colorPalette);
+  // console.dir('headField :' + bitmap.headField);
+  // console.dir('size :' + bitmap.size);
+  // console.dir('Pix Array start :' + bitmap.startPixelArray);
+  // console.dir('color palette :' + bitmap.colorPalette);
 
 });

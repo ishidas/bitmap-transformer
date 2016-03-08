@@ -6,11 +6,9 @@ var emitter = new events.EventEmitter();
 // Black and White/gray scale colors
 //***********************************
 emitter.on('blackAndWhite', exports.blackAndWhite = function(bitmap){
-  if(bitmap.colorPalette == 250){
-    for(var i = 54; i <= 1078; i = i + 4){
-      // console.dir(bitmap);
+  if(bitmap.colorPalette == 256){
+    for(var i = 54; i < 1078; i = i + 4){
       var grayScale = ( bitmap[i]+ bitmap[i+1] + bitmap[i+2])/3;
-      // var constantNum = 0.2;
       bitmap[i] = grayScale;
       bitmap[i+1] = grayScale;
       bitmap[i+2] = grayScale;
@@ -24,6 +22,5 @@ emitter.on('blackAndWhite', exports.blackAndWhite = function(bitmap){
       bitmap[j+2] = grayScale2;
     }
   }
-  console.dir(bitmap);
   return bitmap;
 });
