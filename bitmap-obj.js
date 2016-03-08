@@ -2,8 +2,10 @@
 var events = require('events');
 var emitter = new events.EventEmitter();
 
-console.log('Am I here?');
 
+//*************************************
+//Creating bitmap Object for both imgs
+//*************************************
 emitter.on('createBitmapObj',exports.createBitmapObj = function(bitmap){
   bitmap.headField = bitmap.toString('ascii', 0,2);
   bitmap.size = bitmap.readUInt32LE(2);
