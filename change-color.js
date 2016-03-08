@@ -2,20 +2,21 @@
 var events = require('events');
 var emitter = new events.EventEmitter();
 
-// Inverting colors
+//**************************************************************
+// Inverting colors on both non-palette-bitmap & palette-bitmap.
+// If bitmap Object has color palette of 256, it uses first for loop,
+//otherwise, uses the second one.
+//**************************************************************
 emitter.on('transform', exports.transform = function(bitmap){
-  var nums = [];
-  console.dir(bitmap);
-  for(var i = 54; i < 1078; i++){
-    var max = 256;
-    // console.log(max - bitmap[i]);
-    nums.push(max - bitmap[i]);
+  var max = 256;
+  if(bitmap.colorPalette == 256){
+    for(var i = 54; i < 1078; i++){
+      bitmap[i] = max - bitmap[i];
+    }
+  } else {
+    for(var j = 54; j < bitmap.length ; j++){
+      bitmap[j] = max - bitmap[j];
+    }
   }
-  var counter = 54;
-  nums.forEach(function(num){
-    // console.log('here is ' + counter );
-    bitmap.writeUInt32LE(num, counter, counter);
-    counter += 1;
-    return counter;
-  });
+  return bitmap;
 });

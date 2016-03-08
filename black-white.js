@@ -18,9 +18,3 @@ emitter.on('blackAndWhite', exports.blackAndWhite = function(bitmap){
   console.dir(bitmap);
   return bitmap;
 });
-
-// function createNewArray (){
-//   for( var i = 54; i < 1078; i++){
-//
-//   }
-// }

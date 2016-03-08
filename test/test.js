@@ -17,5 +17,4 @@ describe('testing change-color.js file', function(){
     console.log('here is test ' + value);
     expect(value).not.to.be.eql(changeColor.transform(value));
   });
-  // index 54 has value of 
 });
